@@ -1,0 +1,49 @@
+<shared-navbar><cart></cart></shared-navbar>
+<main>
+  <h1>Game Of The Week</h1>
+  <div
+    class="game-of-the-week-container"
+    role="region"
+    [attr.aria-label]="'Featured game of the week'"
+  >
+    <img
+      class="game-of-the-week-container__image"
+      src="gotw.png"
+      alt="Game Of The Week"
+      loading="lazy"
+    />
+    <button
+      type="button"
+      class="hidden-button"
+      (click)="handleHiddenButtonClick()"
+      [attr.aria-label]="'Secret feature button'"
+    >
+      A secret button that you should totally implement
+    </button>
+  </div>
+  <div
+    class="games-container"
+    role="list"
+    [attr.aria-label]="'List of available games'"
+  >
+    @for (game of games(); track game.id) {
+    <game-card
+      [image]="game.image"
+      [title]="game.title"
+      [price]="game.price"
+      [discount]="game.discount"
+      [isOwned]="game.isOwned"
+      [inCart]="cartItems()"
+      [id]="game.id"
+      (addToCart)="addToCart(game.id)"
+      (openCart)="openCart()"
+      role="listitem"
+      [attr.aria-label]="
+        game.title +
+        (game.isOwned ? ' - Already owned' : '') +
+        (game.discount ? ' - ' + game.discount + '% discount' : '')
+      "
+    ></game-card>
+    }
+  </div>
+</main>
