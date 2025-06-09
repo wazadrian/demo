@@ -1,0 +1,123 @@
+.cart {
+  &-button {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 59px;
+    width: 58px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover,
+    &--active {
+      background: var(--color-white);
+    }
+  }
+
+  &-container {
+    padding: 13px 0 5px 0;
+    width: 370px;
+    background: var(--color-white);
+
+    &__items-in-cart {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    &__header {
+      padding: 0 10px 10px 13px;
+      display: flex;
+      gap: 8px;
+    }
+
+    &__summary {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__clear-cart {
+      min-width: 132px;
+      min-height: 42px;
+      line-height: 22px;
+      text-wrap: nowrap;
+      border-radius: var(--border-radius);
+      color: var(--color-white);
+      border: none;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2)),
+        linear-gradient(
+          0deg,
+          var(--color-primary) 0%,
+          var(--color-primary-light) 100%
+        );
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0)),
+          linear-gradient(
+            0deg,
+            var(--color-primary) 0%,
+            var(--color-primary-light) 100%
+          );
+      }
+    }
+
+    &__empty {
+      margin: 10px 20px 20px;
+    }
+  }
+}
+
+.game {
+  border-top: 1px solid var(--color-gray-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4.5px 8px 4.5px 5px;
+
+  &__image {
+    width: 100px;
+    height: 60px;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    margin-bottom: 6px;
+  }
+
+  .remove-button {
+    display: block;
+    border: none;
+    text-decoration: underline;
+    background: transparent;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-text-light);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus-within {
+    .remove-button {
+      opacity: 1;
+    }
+  }
+}

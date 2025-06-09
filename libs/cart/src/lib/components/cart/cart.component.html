@@ -1,0 +1,62 @@
+<button
+  class="cart-button"
+  [ngClass]="{ 'cart-button--active': isOpen() }"
+  [cdkMenuTriggerFor]="cart"
+  (cdkMenuOpened)="openCart()"
+  (cdkMenuClosed)="closeCart()"
+  [attr.aria-label]="'Shopping cart'"
+  [attr.aria-expanded]="isOpen()"
+>
+  <img src="cart.svg" alt="cart" />
+  {{ itemCount() }}
+</button>
+<ng-template #cart>
+  <div
+    class="cart-container"
+    cdkMenu
+    role="dialog"
+    aria-label="Shopping cart content"
+  >
+    @if (items().length > 0) {
+    <div class="cart-container__header">
+      <div class="cart-container__summary">
+        <span class="cart-container__items-in-cart">
+          {{ itemCount() }} ITEMS IN CART
+        </span>
+        <span class="cart-container__total">
+          {{ totalAmount() | currency }}
+        </span>
+      </div>
+      <button
+        class="cart-container__clear-cart"
+        (click)="clearCart()"
+        cdkMenuItem
+        [attr.aria-label]="'Clear shopping cart'"
+      >
+        CLEAR CART
+      </button>
+    </div>
+    @for (game of items(); track game.id) {
+    <div class="game">
+      <img class="game__image" [src]="game.image" [alt]="game.title" />
+      <div class="game__info">
+        <div class="game__title">{{ game.title }}</div>
+        <button
+          type="button"
+          class="remove-button"
+          cdkMenuItem
+          (click)="$event.stopPropagation(); removeItem(game.id)"
+          [attr.aria-label]="'Remove ' + game.title + ' from cart'"
+        >
+          Remove
+        </button>
+      </div>
+      <span class="game__price">{{ game.price | currency }}</span>
+    </div>
+    } } @else {
+    <div class="cart-container__empty">
+      <span class="cart-container__empty-text">Your cart is empty :(</span>
+    </div>
+    }
+  </div>
+</ng-template>
