@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(0deg, var(--color-gray), var(--color-gray)),
+    linear-gradient(
+      360deg,
+      rgba(220, 220, 220, 0.0001) 0%,
+      rgba(255, 255, 255, 0.5) 93.45%,
+      rgba(255, 255, 255, 0.49) 100%
+    );
+
+  height: 59px;
+  width: 100vw;
+}
+
+.logo {
+  width: 43px;
+  height: 37px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--container-max-width);
+  width: 100%;
+  padding: 0 20px;
+}
