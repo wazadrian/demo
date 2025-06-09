@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'reset-css';
+
+// Variables
+:root {
+  // Colors
+  --color-primary: #7a3dc6;
+  --color-primary-light: #b65ae2;
+  --color-text: #222;
+  --color-text-light: #404040;
+  --color-background: #f5f5f5;
+  --color-site-background: #c6c3cb;
+  --color-border: rgba(151, 151, 151, 1);
+  --color-success: rgba(0, 144, 94, 1);
+  --color-white: #fff;
+  --color-gray: #dedede;
+  --color-gray-light: rgba(184, 184, 184, 0.3);
+
+  // Border radius
+  --border-radius: 2px;
+
+  // Shadows
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.07);
+
+  // Container
+  --container-max-width: 1100px;
+}
+
+html {
+  * {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Focus styles
+:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+}

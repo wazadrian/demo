@@ -1,0 +1,98 @@
+---
+description: 
+globs: *
+alwaysApply: false
+---
+# Angular E-commerce Project Rules
+
+## Architecture & Structure
+- Use Angular signal store
+- make sure that app is ssr
+- apps should be small
+- add libs for components
+- Use Angular 20+ (latest two major releases)
+- Follow Angular's official style guide and best practices
+- Implement feature-based architecture with lazy loading
+- Use standalone components where applicable
+- Implement proper state management (NgRx recommended)
+- Follow SOLID principles and clean code practices
+
+## Component Structure
+- Create reusable components for:
+  - TopBar (with cart icon)
+  - CartDropdown
+  - ProductList
+  - ProductCard
+  - CartItem
+- Use smart/dumb component pattern
+- Implement proper component communication using services
+
+## State Management
+- Implement cart state management
+- Track cart items count
+- Handle product availability status
+- Prevent duplicate products in cart
+- Implement cart clearing functionality
+
+## Testing Requirements
+- Unit tests for all components
+- Unit tests for services
+- Integration tests for cart functionality
+- E2E tests for critical user flows
+- Minimum 80% code coverage
+
+## UI/UX Guidelines
+- Implement exact Figma design
+- Add hover effects for cart items
+- Show "IN CART" status for added products
+- Implement smooth animations for cart interactions
+- Basic RWD implementation (optional enhancement)
+
+## Code Quality
+- Use TypeScript strict mode
+- Implement proper error handling
+- Use proper typing for all interfaces and models
+- Follow Angular's change detection best practices
+- Implement proper loading states
+
+## Performance
+- Implement lazy loading for routes
+- Use proper Angular lifecycle hooks
+- Optimize change detection
+- Implement proper caching strategies
+- Use proper Angular pipes for data transformation
+
+## Documentation
+- Include comprehensive README with:
+  - Installation instructions
+  - Running instructions
+  - Testing instructions
+  - Project structure explanation
+- Document all major components and services
+- Include API documentation if applicable
+
+## Git & Repository
+- Use meaningful commit messages
+- Implement proper branching strategy
+- Include .gitignore for Angular project
+- Document all dependencies in package.json
+- Include proper license file
+
+## Security
+- Implement proper input validation
+- Follow Angular security best practices
+- Use proper sanitization for user inputs
+- Implement proper error boundaries
+
+## Accessibility
+- Follow WCAG 2.1 guidelines
+- Implement proper ARIA attributes
+- Ensure keyboard navigation
+- Provide proper focus management
+
+## Build & Deployment
+- Configure proper build optimization
+- Implement proper environment configuration
+- Set up CI/CD pipeline
+- Configure proper production builds
+

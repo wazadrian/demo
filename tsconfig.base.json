@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cart": ["libs/cart/src/index.ts"],
+      "@game-of-the-week": ["libs/game-of-the-week/src/index.ts"],
+      "@game": ["libs/game/src/index.ts"],
+      "@shared": ["libs/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
