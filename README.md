@@ -2,8 +2,11 @@
 
 - install: `npm install`
 - run: `nx serve gog` -> http://localhost:4200/
+- ssr `npx nx build gog` `npx nx serve-static gog`
 - e2e: `nx e2e gog-e2e`
 - jest: `nx run-many -t test -p cart game gog`
+
+- vercel deployment: https://demo-blush-one.vercel.app/
 
 # Summary
 

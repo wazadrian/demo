@@ -2,6 +2,14 @@
   class="cart-button"
   [ngClass]="{ 'cart-button--active': isOpen() }"
   [cdkMenuTriggerFor]="cart"
+  [cdkMenuPosition]="[
+    {
+      originX: 'end',
+      originY: 'bottom',
+      overlayX: 'end',
+      overlayY: 'top'
+    }
+  ]"
   (cdkMenuOpened)="openCart()"
   (cdkMenuClosed)="closeCart()"
   [attr.aria-label]="'Shopping cart'"
